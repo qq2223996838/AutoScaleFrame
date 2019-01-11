@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MianViewController.h"
+#import "AutoScaleFrameHM/AutoScaleFrameMain.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //1.创建一个导航控制器
+    UINavigationController *nav=[[UINavigationController alloc]init];
+    //2.设置导航控制器为window的根视图
+    self.window.rootViewController=nav;
+    
+    //3.跳转测试界面
+    MianViewController  *mianVC = [[MianViewController  alloc] init];
+    [nav pushViewController:mianVC animated:YES];
+    
+    
+    
+    
     return YES;
 }
 

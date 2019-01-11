@@ -44,22 +44,109 @@ static bool isFirstAccess = YES;
     
     CGRect newFrame;
     newFrame.origin.x = x * ASF.autoSizeScaleX ;
-    newFrame.origin.y = y * ASF.autoSizeScaleY + (isIPhoneX ?88:0);
+    newFrame.origin.y = y * ASF.autoSizeScaleY + (iS_IPhoneX_All?ASF.autoSizeScaleY*iPhone_SNavH:0);
     newFrame.size.width = width * ASF.autoSizeScaleX ;
     newFrame.size.height = height * ASF.autoSizeScaleY ;
     
     return newFrame;
 }
 
-+ (CGRect)CGASKeepX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height
++ (CGRect)CGASKeepX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height Keep:(asKFrameType)k
 {
     AutoScaleFrame *ASF = [AutoScaleFrame sharedAutoScaleFrame];
     
     CGRect newFrame;
-    newFrame.origin.x = x * ASF.autoSizeScaleX ;
-    newFrame.origin.y = y * ASF.autoSizeScaleY + (isIPhoneX ?88:0);
-    newFrame.size.width = width ;
-    newFrame.size.height = height ;
+    CGFloat distanceX;
+    CGFloat distanceY;
+    
+    switch (k) {
+        case asKFrameXYWH:
+            if ( x > iPhone6W/2 ) {
+                
+                distanceX = ScreenWidth - (iPhone6W - x) ;
+                
+            }else{
+                distanceX = x;
+            }
+            
+            if ( y > iPhone6H/2 ) {
+                
+                distanceY = Screen_Security_Hight - (iPhone6H - y) ;
+                
+            }else{
+                distanceY =  y ;
+            }
+            newFrame.origin.x = distanceX  ;
+            newFrame.origin.y = distanceY  ;
+            newFrame.size.width = width ;
+            newFrame.size.height = height ;
+            break;
+        case asKFrameXY:
+            if ( x > iPhone6W/2 ) {
+                float increaseWidth = width * ASF.autoSizeScaleX - width;
+                distanceX = ScreenWidth - (iPhone6W - x) - increaseWidth ;
+                
+            }else{
+                distanceX = x;
+            }
+            
+            if ( y > iPhone6H/2 ) {
+                float increaseHeight = height * ASF.autoSizeScaleY - height;
+                distanceY = Screen_Security_Hight - (iPhone6H - y) - increaseHeight;
+                
+            }else{
+                distanceY =  y ;
+            }
+            newFrame.origin.x = distanceX ;
+            newFrame.origin.y = distanceY ;
+            newFrame.size.width = width * ASF.autoSizeScaleX ;
+            newFrame.size.height = height * ASF.autoSizeScaleY ;
+            break;
+        case asKFrameWH:
+            newFrame.origin.x = x * ASF.autoSizeScaleX ;
+            newFrame.origin.y = y * ASF.autoSizeScaleY ;
+            newFrame.size.width = width ;
+            newFrame.size.height = height ;
+            break;
+        case asKFrameX:
+            if ( x > iPhone6W/2 ) {
+                float increaseWidth = width * ASF.autoSizeScaleX - width;
+                distanceX = ScreenWidth - (iPhone6W - x) - increaseWidth ;
+                
+            }else{
+                distanceX = x;
+            }
+            newFrame.origin.x = distanceX ;
+            newFrame.origin.y = y * ASF.autoSizeScaleY ;
+            newFrame.size.width = width * ASF.autoSizeScaleX ;
+            newFrame.size.height = height * ASF.autoSizeScaleY ;
+            break;
+        case asKFrameY:
+            if ( y > iPhone6H/2 ) {
+                float increaseHeight = height * ASF.autoSizeScaleY - height;
+                distanceY = Screen_Security_Hight - (iPhone6H - y) - increaseHeight;
+                
+            }else{
+                distanceY =  y ;
+            }
+            newFrame.origin.x = x * ASF.autoSizeScaleX ;
+            newFrame.origin.y = distanceY ;
+            newFrame.size.width = width * ASF.autoSizeScaleX ;
+            newFrame.size.height = height * ASF.autoSizeScaleY ;
+            break;
+        case asKFrameW:
+            newFrame.origin.x = x * ASF.autoSizeScaleX ;
+            newFrame.origin.y = y * ASF.autoSizeScaleY ;
+            newFrame.size.width = width ;
+            newFrame.size.height = height * ASF.autoSizeScaleY ;
+            break;
+        case asKFrameH:
+            newFrame.origin.x = x * ASF.autoSizeScaleX ;
+            newFrame.origin.y = y * ASF.autoSizeScaleY ;
+            newFrame.size.width = width * ASF.autoSizeScaleX ;
+            newFrame.size.height = height ;
+            break;
+    }
     
     return newFrame;
 }
@@ -77,7 +164,7 @@ static bool isFirstAccess = YES;
     AutoScaleFrame *ASF = [AutoScaleFrame sharedAutoScaleFrame];
     
     CGRect newFrame;
-    newFrame.origin.y = y * ASF.autoSizeScaleY + (isIPhoneX ?88:0);
+    newFrame.origin.y = y * ASF.autoSizeScaleY;
     return newFrame.origin.y;
 }
 + (CGFloat)CGASMakeW:(CGFloat) W
@@ -109,7 +196,7 @@ static bool isFirstAccess = YES;
 - (void)AutoSizeScale{
     
     _autoSizeScaleX = ScreenWidth/RealUISrceenWidth;
-    _autoSizeScaleY = ScreenHight/RealUISrceenHight;
+    _autoSizeScaleY = Screen_Calculate_Hight/RealUISrceenHight;
 }
 
 @end

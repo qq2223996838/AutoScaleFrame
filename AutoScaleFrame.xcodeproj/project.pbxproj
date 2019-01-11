@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E690581D21E32EEB00C21355 /* MianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E690581C21E32EEB00C21355 /* MianViewController.m */; };
+		E690582021E32F5500C21355 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E690581F21E32F5500C21355 /* OneViewController.m */; };
+		E690582321E32F6C00C21355 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E690582221E32F6C00C21355 /* TwoViewController.m */; };
+		E690582621E32F8800C21355 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E690582521E32F8800C21355 /* ThreeViewController.m */; };
 		E6CF2C4821E09D1900F25702 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF2C4721E09D1900F25702 /* AppDelegate.m */; };
-		E6CF2C4B21E09D1A00F25702 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6CF2C4A21E09D1900F25702 /* ViewController.m */; };
 		E6CF2C4E21E09D1A00F25702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CF2C4C21E09D1A00F25702 /* Main.storyboard */; };
 		E6CF2C5021E09D1D00F25702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6CF2C4F21E09D1D00F25702 /* Assets.xcassets */; };
 		E6CF2C5321E09D1D00F25702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6CF2C5121E09D1D00F25702 /* LaunchScreen.storyboard */; };
@@ -17,11 +20,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E690581B21E32EEB00C21355 /* MianViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MianViewController.h; sourceTree = "<group>"; };
+		E690581C21E32EEB00C21355 /* MianViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MianViewController.m; sourceTree = "<group>"; };
+		E690581E21E32F5500C21355 /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		E690581F21E32F5500C21355 /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		E690582121E32F6C00C21355 /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		E690582221E32F6C00C21355 /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		E690582421E32F8800C21355 /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		E690582521E32F8800C21355 /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
 		E6CF2C4321E09D1900F25702 /* AutoScaleFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoScaleFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6CF2C4621E09D1900F25702 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6CF2C4721E09D1900F25702 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6CF2C4921E09D1900F25702 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E6CF2C4A21E09D1900F25702 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E6CF2C4D21E09D1A00F25702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6CF2C4F21E09D1D00F25702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6CF2C5221E09D1D00F25702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,8 +74,14 @@
 				E6CF2C6221E0B97200F25702 /* AutoScaleFrameHM */,
 				E6CF2C4621E09D1900F25702 /* AppDelegate.h */,
 				E6CF2C4721E09D1900F25702 /* AppDelegate.m */,
-				E6CF2C4921E09D1900F25702 /* ViewController.h */,
-				E6CF2C4A21E09D1900F25702 /* ViewController.m */,
+				E690581B21E32EEB00C21355 /* MianViewController.h */,
+				E690581C21E32EEB00C21355 /* MianViewController.m */,
+				E690581E21E32F5500C21355 /* OneViewController.h */,
+				E690581F21E32F5500C21355 /* OneViewController.m */,
+				E690582121E32F6C00C21355 /* TwoViewController.h */,
+				E690582221E32F6C00C21355 /* TwoViewController.m */,
+				E690582421E32F8800C21355 /* ThreeViewController.h */,
+				E690582521E32F8800C21355 /* ThreeViewController.m */,
 				E6CF2C4C21E09D1A00F25702 /* Main.storyboard */,
 				E6CF2C4F21E09D1D00F25702 /* Assets.xcassets */,
 				E6CF2C5121E09D1D00F25702 /* LaunchScreen.storyboard */,
@@ -117,11 +132,12 @@
 				TargetAttributes = {
 					E6CF2C4221E09D1900F25702 = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = E6CF2C3E21E09D1900F25702 /* Build configuration list for PBXProject "AutoScaleFrame" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -156,10 +172,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6CF2C4B21E09D1A00F25702 /* ViewController.m in Sources */,
+				E690582321E32F6C00C21355 /* TwoViewController.m in Sources */,
+				E690581D21E32EEB00C21355 /* MianViewController.m in Sources */,
 				E6CF2C5621E09D1D00F25702 /* main.m in Sources */,
+				E690582021E32F5500C21355 /* OneViewController.m in Sources */,
 				E6CF2C4821E09D1900F25702 /* AppDelegate.m in Sources */,
 				E6CF2C5E21E0A8AB00F25702 /* AutoScaleFrame.m in Sources */,
+				E690582621E32F8800C21355 /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +320,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AutoScaleFrame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoScaleFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,10 +334,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AutoScaleFrame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.AutoScaleFrame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

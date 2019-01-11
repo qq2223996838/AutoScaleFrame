@@ -8,37 +8,32 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "AutoScaleFrameMain.h"
 
-//判断是否 iPhone X
-#define isIPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
-
-/** 视觉安全区域 W H
- * 宽：获取全屏宽度 无处理
- * 高：如果是iPhone X - 122 xp 高度
-      iPhone X  --  tabbar 有 34xp || navbar 有 88xp  安全区域
- */
-
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
-#define ScreenHight (isIPhoneX ? [UIScreen mainScreen].bounds.size.height - 34 - iPhoneXnavbarH : [UIScreen mainScreen].bounds.size.height)
-
-
-/** 设置默认 iPhone X 导航栏 高度 88xp */
-#define iPhoneXnavbarH 88.0f
+typedef enum {
+    asKFrameXYWH, //保持边距宽高不变
+    asKFrameXY, // 保持XY边距不变
+    asKFrameWH, // 保持宽高不变
+    asKFrameX, // 保持X边距不变
+    asKFrameY, // 保持Y边距不变
+    asKFrameW, // 保持宽度不变
+    asKFrameH  // 保持高度不变
+} asKFrameType;
 
 /** 这个参数,看公司项目UI图 具体是哪款机型,默认  iphone6
  RealUISrceen
  4/4s  -- 480
  5/5s  -- 568
- 6/6s/7/7s  -- 667
- 6p/6sp/7p/7sp  -- 736
+ 6/6s/7/7s/8  -- 667
+ 6p/6sp/7p/7sp/8p  -- 736
  x  -- 812
  */
 static const float  RealUISrceenHight =  667.0;
 /**
  RealUISrceen
  4/4s 5/5s  -- 320
- 6/6s/7/7s  -- 375
- 6p/6sp/7p/7sp  -- 414
+ 6/6s/7/7s/8  -- 375
+ 6p/6sp/7p/7sp/8p  -- 414
  x  -- 375
  */
 static const float RealUISrceenWidth = 375.0;
@@ -66,7 +61,7 @@ static const float RealUISrceenWidth = 375.0;
  * 传入 当前 Frame 参数
  * 只改变 适配的位置 ；大小保持原样
  */
-+ (CGRect)CGASKeepX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height;
++ (CGRect)CGASKeepX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height Keep:(asKFrameType)k;
 
 /** 返回新 x/y/w/h
  * 传入 当前 x/y/w/h
